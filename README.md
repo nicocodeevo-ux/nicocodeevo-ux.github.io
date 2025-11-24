@@ -1,51 +1,93 @@
-# nicokuehn-dci.github.io — Minimal static resume
+# nicokuehn-dci.github.io — Modern Digital Resume
 
-This repository now contains a single, self-contained static `index.html` at the repository root. It's intentionally minimal so GitHub Pages can serve the portfolio site directly from the repository root (no build step required).
+A premium, modern digital resume/CV built for GitHub Pages. Features a stunning dark theme with golden accents, smooth animations, and fully responsive design.
 
-What you need (minimal)
+## 🌟 Live Site
 
-- A public GitHub repository named exactly `nicokuehn-dci.github.io`.
-- A single `index.html` file at the repository root (this file).
-- Optionally a `README.md` (this file) and a `.gitignore`.
+**Visit:** [https://nicokuehn-dci.github.io/](https://nicokuehn-dci.github.io/)
 
-How to publish (quick)
+## ✨ Features
 
-1. Push your files to `main`.
-2. On GitHub, open the repository Settings → Pages.
-3. Under "Build and deployment" choose: Branch: `main` and Folder: `/ (root)`.
-4. Save and wait a minute—your site will be available at:
+- **Premium Design**: Dark gradient theme with vibrant golden accents
+- **Smooth Animations**: Hover effects, pulsing backgrounds, and micro-interactions
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Print-Ready**: Built-in print styles for PDF export
+- **SEO Optimized**: Proper meta tags and semantic HTML
+- **Single File**: No build process required — pure HTML/CSS
 
-   https://nicokuehn-dci.github.io/
+## 🎨 Design Highlights
 
-Notes
+- **Color Palette**: Deep blue-black gradients with golden (#ffd700) highlights
+- **Typography**: Dancing Script for headings, Inter for body text
+- **Interactive Elements**: Hover effects on all cards, tags, and links
+- **Glassmorphism**: Subtle transparency and blur effects
+- **Responsive Breakpoints**: 968px (tablet), 640px (mobile)
 
-- This repo contains a single static HTML resume; no Node.js, no build steps needed to serve the page.
-- If you want to work on a richer React/Vite source in the future, keep it in a `src/` folder and generate a build for production, but for a simple portfolio a single `index.html` is enough.
-- If you prefer automated builds that update the published files, I can add a GitHub Actions workflow that builds and pushes the `dist/` output to `/docs` or to a `gh-pages` branch.
+## 📦 Deployment
 
-If you'd like, I can also:
-- Add a small sitemap or meta tags for SEO.
-- Add a badge showing GitHub Pages deployment status.
-- Move source files into `src/` to keep the repo root minimal.
+### Quick Start
 
-Tell me which of these you'd like and I'll implement it.
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/nicokuehn-dci/nicokuehn-dci.github.io.git
+   cd nicokuehn-dci.github.io
+   ```
 
-# Run and deploy your AI Studio app
+2. **View locally**
+   - Simply open `index.html` in your browser
+   - Or use a local server: `python3 -m http.server 8000`
 
-This contains everything you need to run your app locally.
+3. **Deploy to GitHub Pages**
+   - Push to the `main` branch
+   - Go to **Settings** → **Pages**
+   - Set source to **main** branch, **/ (root)** folder
+   - Save and wait ~1 minute for deployment
 
-View your app in AI Studio: https://ai.studio/apps/drive/13v6kXOLfzSI13Y6ML07R5OsUnCdBJNN8
+## 🛠️ Customization
 
-## Run Locally
+All content is in a single `index.html` file. To customize:
 
-**Prerequisites:**  Node.js
+1. **Personal Information**: Update the header section with your name, title, and summary
+2. **Contact Details**: Modify email, phone, location, and GitHub links
+3. **Work Experience**: Edit the experience items with your job history
+4. **Skills**: Add or remove skill tags in the skills section
+5. **Colors**: Adjust CSS variables in the `:root` selector for custom theming
 
+## 📱 Sections
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Header**: Profile image, name, title, professional summary
+- **Contact Bar**: Email, phone, location, GitHub (with icons)
+- **Education**: Academic background and courses
+- **Work Experience**: Detailed job history with responsibilities
+- **Skills**: Technical and soft skills as interactive tags
+- **Personal Projects**: Music and creative projects
+- **Languages**: Language proficiency levels
+- **Interests**: Personal interests and hobbies
+
+## 🖨️ PDF Export
+
+Click the "Download as PDF" button or use your browser's print function (Ctrl/Cmd + P) to save as PDF. The resume includes optimized print styles for clean, professional output.
+
+## 🚀 Tech Stack
+
+- **HTML5**: Semantic markup
+- **CSS3**: Modern styling with animations, gradients, and flexbox/grid
+- **Google Fonts**: Dancing Script, Inter
+- **No JavaScript**: Pure HTML/CSS (except print function)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 About
+
+**Nico Kuehn**  
+Python Backend Programmer / Musician / Producer
+
+- 📧 Email: nico.code.evo@gmail.com
+- 🐙 GitHub: [@nicokuehn-dci](https://github.com/nicokuehn-dci)
+- 📍 Location: Aue-Bad Schlema, DE
+
+---
+
+Built with ❤️ and deployed on GitHub Pages
