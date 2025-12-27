@@ -6,9 +6,9 @@ const Hero: React.FC = () => {
   const [showScrollMessage, setShowScrollMessage] = useState(false);
 
   useEffect(() => {
-    if (!heroRef.current || !window.gsap) return;
+    if (!window.gsap) return;
 
-    const ctx = window.gsap.context(() => {
+    window.gsap.context(() => {
       // Animate hero elements with GSAP
       const elements = heroRef.current?.querySelectorAll('span, h1, p, div > a');
       

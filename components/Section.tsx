@@ -13,7 +13,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
   useEffect(() => {
     if (!sectionRef.current || !window.gsap) return;
 
-    const ctx = window.gsap.context(() => {
+    window.gsap.context(() => {
       // Animate section entrance
       const sectionContent = sectionRef.current?.querySelector('.relative.apple-glass');
       if (sectionContent) {

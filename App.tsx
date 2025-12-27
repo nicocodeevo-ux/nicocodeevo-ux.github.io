@@ -462,7 +462,7 @@ const App: React.FC = () => {
           </div>
         </div>
         <div className="text-center font-mono text-[9px] text-white/15 tracking-[0.6em] uppercase">
-          &copy; {new Date().getFullYear()} Nico Kuehn // Python Dev // Aue-Bad Schlema // ID_{Math.random().toString(36).substr(2, 6).toUpperCase()}
+          &copy; {new Date().getFullYear()} Nico Kuehn // Python Dev // Aue-Bad Schlema // ID_{React.useId().replace(/:/g, '').slice(0, 6).toUpperCase()}
         </div>
       </footer>
     </div>
