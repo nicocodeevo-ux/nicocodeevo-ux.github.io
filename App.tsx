@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Cursor from './components/Cursor';
 import Hero from './components/Hero';
 import Section from './components/Section';
-import SkillsParticles from './components/SkillsParticles';
 import TerminalText from './components/TerminalText';
 
 const App: React.FC = () => {

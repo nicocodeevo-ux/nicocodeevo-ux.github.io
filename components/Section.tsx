@@ -30,8 +30,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
             scrollTrigger: {
               trigger: sectionContent,
               start: "top 80%",
-              end: "top 15%",
-              toggleActions: "play none none reverse"
+              end: "top 15%"
             }
           }
         );
@@ -56,8 +55,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
               scrollTrigger: {
                 trigger: contactForm,
                 start: "bottom 85%",
-                end: "top 15%",
-                toggleActions: "play none none reverse"
+                end: "top 15%"
               }
             }
           );
@@ -80,8 +78,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
               scrollTrigger: {
                 trigger: videoCard,
                 start: "top 85%",
-                end: "top 15%",
-                toggleActions: "play none none reverse"
+                end: "top 15%"
               }
             }
           );
@@ -105,8 +102,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
             scrollTrigger: {
               trigger: titleElement,
               start: "top 70%",
-              end: "top 15%",
-              toggleActions: "play none none reverse"
+              end: "top 15%"
             }
           }
         );

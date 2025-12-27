@@ -34,28 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: card,
-            start: "bottom 70%", // Trigger when card reaches first 30% from bottom (while scrolling down)
+            start: "top 70%", // Trigger when card reaches first 30% from bottom (while scrolling down)
             end: "top 15%"
           }
         }
       );
 
-      // Professional hover effect with title text enhancement
+      // Professional hover effect with subtle enhancement
       card.addEventListener('mouseenter', () => {
         // Enhanced card hover animation
         window.gsap.to(card, {
-          scale: 1.03,
-          rotationX: 3,
-          rotationY: 2,
-          duration: 0.4,
+          scale: 1.02,
+          duration: 0.3,
           ease: "power2.out"
         });
 
         // Animate inner text elements
         const titleElements = card.querySelectorAll('h2, h3');
         window.gsap.to(titleElements, {
-          y: -3,
-          duration: 0.3,
+          y: -2,
+          duration: 0.2,
           ease: "power2.out"
         });
       });
@@ -64,9 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reverse card hover animation
         window.gsap.to(card, {
           scale: 1,
-          rotationX: 0,
-          rotationY: 0,
-          duration: 0.4,
+          duration: 0.3,
           ease: "power2.out"
         });
 
@@ -74,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const titleElements = card.querySelectorAll('h2, h3');
         window.gsap.to(titleElements, {
           y: 0,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power2.out"
         });
       });
@@ -84,15 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const timelineItems = section.querySelectorAll('.relative.pl-12');
     timelineItems.forEach((item, itemIndex) => {
       const dot = item.querySelector('.absolute.left-\\[-11px\\]');
-      const content = item.querySelector('.div > div');
+      const content = item.querySelector('.pl-12 > div');
       
       if (dot && content) {
         const tl = window.gsap.timeline({
           scrollTrigger: {
             trigger: item,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reverse"
+            start: "top 70%", // Trigger when card reaches first 30% from bottom (while scrolling down)
+            end: "top 15%"
           }
         });
 
@@ -125,12 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Parallax effects for background elements
+  // Apply parallax effects to background elements with blur classes
   const parallaxElements = document.querySelectorAll('.absolute');
   parallaxElements.forEach((element) => {
-    if (element.classList.contains('blur-\\[150px\\]') || element.classList.contains('blur-\\[120px\\]')) {
+    if (element.classList.contains('blur-[150px]') || element.classList.contains('blur-[120px]')) {
       window.gsap.to(element, {
-        yPercent: -20,
+        yPercent: -15,
         ease: "none",
         scrollTrigger: {
           trigger: element,
