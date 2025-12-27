@@ -29,7 +29,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
             ease: "easeOut",
             scrollTrigger: {
               trigger: sectionContent,
-              start: "top 80%",
+              start: "top 70%",
               end: "top 15%"
             }
           }
@@ -54,8 +54,8 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
               ease: "power3.out",
               scrollTrigger: {
                 trigger: contactForm,
-                start: "bottom 85%",
-                end: "top 15%"
+                start: "top 70%",
+              end: "top 15%"
               }
             }
           );
@@ -77,8 +77,8 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
               ease: "power3.out",
               scrollTrigger: {
                 trigger: videoCard,
-                start: "top 85%",
-                end: "top 15%"
+                start: "top 70%",
+              end: "top 15%"
               }
             }
           );
