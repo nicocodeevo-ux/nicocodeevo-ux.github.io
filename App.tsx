@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import Cursor from './components/Cursor';
 import Hero from './components/Hero';
 import Section from './components/Section';
-import SkillsParticles from './components/SkillsParticles';
 import TerminalText from './components/TerminalText';
 
 const App: React.FC = () => {
@@ -74,7 +72,7 @@ const App: React.FC = () => {
         <Section id="about" title="Nico Kuehn">
           <div className="flex flex-col md:flex-row gap-6">
             {/* Left: Video Card */}
-            <div className="metallic-card rounded-lg relative overflow-hidden min-h-[400px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
+            <div className="metallic-card rounded-lg relative overflow-hidden h-[280px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
               <div className="absolute inset-0 bg-[#ff7a22]/10 mix-blend-overlay z-10 pointer-events-none"></div>
               <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a] via-transparent to-transparent z-10"></div>
               <div className="relative w-full h-full transform-gpu perspective-1000">
@@ -85,29 +83,31 @@ const App: React.FC = () => {
                   playsInline 
                   className="w-full h-full object-cover opacity-80 mix-blend-screen transform scale-105 group-hover:scale-110 transition-all duration-[2s]"
                 >
-                  <source src="/videocontent/Create_a_develeopers_202512270557_kgxsk.webm" type="video/webm" />
+                  <source src="./videocontent/Create_a_develeopers_202512270557_kgxsk.webm" type="video/webm" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent pointer-events-none"></div>
               </div>
-              <div className="absolute bottom-6 left-6 z-20 flex gap-2">
+              <div className="absolute bottom-4 left-4 z-20 flex gap-2">
                 <span className="w-2 h-2 bg-[#ff7a22] rounded-full animate-ping"></span>
                 <span className="font-mono text-[9px] text-[#ff7a22] tracking-widest uppercase bg-black/80 px-2 py-[2px] rounded depth-shadow">Dev_Creative</span>
               </div>
             </div>
 
             {/* Right: Text Card */}
-            <div className="metallic-card rounded-lg relative overflow-hidden p-12 md:p-16 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
-              <div className="space-y-6">
-                <p className="text-lg text-white/80 leading-relaxed font-light">
-                  Specialized in <span className="text-[#ff7a22] font-semibold underline underline-offset-8 decoration-white/10">Python Backend Development</span> with deep expertise in Django framework, REST APIs, and modern database management.
-                </p>
-                <p className="text-lg text-white/80 leading-relaxed font-light">
-                  Currently undergoing intensive full-time training at <strong className="text-white font-semibold">DCI (Digital Career Institute)</strong>, mastering backend architecture from the ground up. I blend technical precision with discipline learned from years of high-sensitivity security management.
-                </p>
-                <div className="flex flex-wrap gap-3 pt-4">
+            <div className="metallic-card rounded-lg relative overflow-hidden p-6 md:p-8 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[280px]">
+              <div className="h-full flex flex-col justify-between">
+                <div className="space-y-4">
+                  <p className="text-sm text-white/80 leading-relaxed font-light">
+                    Specialized in <span className="text-[#ff7a22] font-semibold underline underline-offset-4 decoration-white/10">Python Backend Development</span> with deep expertise in Django framework, REST APIs, and modern database management.
+                  </p>
+                  <p className="text-sm text-white/80 leading-relaxed font-light">
+                    Currently undergoing intensive full-time training at <strong className="text-white font-semibold">DCI (Digital Career Institute)</strong>, mastering backend architecture from the ground up. I blend technical precision with discipline learned from years of high-sensitivity security management.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
                   {['Aue-Bad Schlema, DE', 'Remote Ready', 'German (Native)', 'English (Pro)'].map(tag => (
-                    <span key={tag} className="px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl apple-glass brushed-metal font-mono text-[10px] tracking-wider uppercase hover:border-[#ff7a22] hover:text-[#ff7a22] transition-all transform hover:-translate-y-1 depth-shadow">{tag}</span>
+                    <span key={tag} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg apple-glass brushed-metal font-mono text-[9px] tracking-wider uppercase hover:border-[#ff7a22] hover:text-[#ff7a22] transition-all transform hover:-translate-y-1 depth-shadow">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -120,7 +120,7 @@ const App: React.FC = () => {
             {/* First Row: Backend & Core Text and Video 1 - Same Size */}
             <div className="flex flex-col lg:flex-row gap-6">
               {/* Backend & Core Text - Same Size as Video 1 */}
-              <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[350px]">
+              <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[280px]">
                 <div className="h-full flex flex-col justify-center">
                   <div className="p-6 apple-glass brushed-metal rounded-[2.5rem] border border-white/5 hover:border-[#ff7a22]/30 transition-all glossy-finish group">
                     <h3 className="font-mono text-[#ff7a22] mb-6 uppercase tracking-[0.3em] text-[11px] font-bold flex items-center gap-4">
@@ -142,7 +142,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Video 1 */}
-              <div className="metallic-card rounded-lg relative overflow-hidden h-[350px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
+              <div className="metallic-card rounded-lg relative overflow-hidden h-[280px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
                 <div className="absolute inset-0 bg-[#ff7a22]/10 mix-blend-overlay z-10 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a] via-transparent to-transparent z-10"></div>
                 <div className="relative w-full h-full transform-gpu perspective-1000">
@@ -153,7 +153,7 @@ const App: React.FC = () => {
                     playsInline 
                     className="w-full h-full object-cover opacity-80 mix-blend-screen transform scale-105 group-hover:scale-110 transition-all duration-[2s]"
                   >
-                    <source src="/videocontent/Create_a_develeopers_202512270558_fbldu.webm" type="video/webm" />
+                    <source src="./videocontent/Create_a_develeopers_202512270558_fbldu.webm" type="video/webm" />
                   </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent pointer-events-none"></div>
@@ -168,7 +168,7 @@ const App: React.FC = () => {
             {/* Second Row: Video 2 and Dev & Creative Text - Same Size */}
             <div className="flex flex-col lg:flex-row gap-6">
               {/* Video 2 - Same Size as Dev & Creative Text */}
-              <div className="metallic-card rounded-lg relative overflow-hidden h-[350px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
+              <div className="metallic-card rounded-lg relative overflow-hidden h-[280px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
                 <div className="absolute inset-0 bg-[#ff7a22]/10 mix-blend-overlay z-10 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a] via-transparent to-transparent z-10"></div>
                 <div className="relative w-full h-full transform-gpu perspective-1000">
@@ -179,7 +179,7 @@ const App: React.FC = () => {
                     playsInline 
                     className="w-full h-full object-cover opacity-80 mix-blend-screen transform scale-105 group-hover:scale-110 transition-all duration-[2s]"
                   >
-                    <source src="/videocontent/Create_a_develeopers_202512270558_fbldu.webm" type="video/webm" />
+                    <source src="./videocontent/Create_a_develeopers_202512270558_fbldu.webm" type="video/webm" />
                   </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent pointer-events-none"></div>
@@ -191,7 +191,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Dev & Creative Text - Same Size as Video 2 */}
-              <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[350px]">
+              <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[280px]">
                 <div className="h-full flex flex-col justify-center">
                   <div className="p-6 apple-glass brushed-metal rounded-[2.5rem] border border-white/5 hover:border-[#ff7a22]/30 transition-all glossy-finish group h-full">
                     <h3 className="font-mono text-[#ff7a22] mb-6 uppercase tracking-[0.3em] text-[11px] font-bold flex items-center gap-4">
@@ -214,19 +214,19 @@ const App: React.FC = () => {
             {/* First Row: Python Backend Developer Text and Video - Same Size */}
             <div className="flex flex-col lg:flex-row gap-6">
               {/* Python Backend Developer Text - Left Side */}
-              <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[350px]">
+              <div className="metallic-card rounded-lg relative overflow-hidden p-6 md:p-8 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[280px]">
                 <div className="h-full flex flex-col justify-center">
-                  <div className="relative pl-12 border-l-2 border-[#ff7a22]/30 group">
-                    <div className="absolute left-[-11px] top-0 w-5 h-5 bg-black border-2 border-[#ff7a22] rounded-full shadow-[0_0_20px_#ff7a22] group-hover:scale-125 transition-transform duration-500"></div>
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                      <h3 className="text-3xl font-bold tracking-tight">Python Backend Developer</h3>
-                      <span className="font-mono text-[10px] text-[#ff7a22] apple-glass px-4 py-2 rounded-full border border-[#ff7a22]/40 tracking-widest uppercase bg-[#ff7a22]/5">03/2025 — Present</span>
+                  <div className="relative pl-10 border-l-2 border-[#ff7a22]/30 group">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 bg-black border-2 border-[#ff7a22] rounded-full shadow-[0_0_15px_#ff7a22] group-hover:scale-125 transition-transform duration-500"></div>
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
+                      <h3 className="text-xl font-bold tracking-tight">Python Backend Developer</h3>
+                      <span className="font-mono text-[9px] text-[#ff7a22] apple-glass px-3 py-1 rounded-full border border-[#ff7a22]/40 tracking-widest uppercase bg-[#ff7a22]/5">03/2025 — Present</span>
                     </div>
-                    <p className="text-white/40 text-sm font-mono mb-6 flex items-center gap-3">
-                      <svg className="w-5 h-5 text-[#ff7a22]/60" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-2.75-.174l-.154.018a5.5 5.5 0 01-1.458-5.148l.154.018a1.166 1.166 0 01.972.651zM9.25 11.83l2 1.143v4.102a8.969 8.969 0 00-2.75-.174l-.154.018a5.5 5.5 0 01-1.458-5.148l.154.018a1.166 1.166 0 01.972.651z" /></svg>
+                    <p className="text-white/40 text-xs font-mono mb-4 flex items-center gap-2">
+                      <svg className="w-4 h-4 text-[#ff7a22]/60" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-2.75-.174l-.154.018a5.5 5.5 0 01-1.458-5.148l.154.018a1.166 1.166 0 01.972.651zM9.25 11.83l2 1.143v4.102a8.969 8.969 0 00-2.75-.174l-.154.018a5.5 5.5 0 01-1.458-5.148l.154.018a1.166 1.166 0 01.972.651z" /></svg>
                       Digital Career Institute (DCI), Berlin
                     </p>
-                    <p className="text-white/70 font-light text-base leading-relaxed max-w-2xl bg-white/5 p-6 rounded-[2rem] border border-white/5 apple-glass">
+                    <p className="text-white/70 font-light text-sm leading-relaxed bg-white/5 p-4 rounded-xl border border-white/5 apple-glass">
                       Immersive specialization in architecture design, data flow optimization, and secure API engineering using the Python ecosystem.
                     </p>
                   </div>
@@ -234,7 +234,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Video - Right Side */}
-              <div className="metallic-card rounded-lg relative overflow-hidden h-[350px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
+              <div className="metallic-card rounded-lg relative overflow-hidden h-[280px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
                 <div className="absolute inset-0 bg-[#ff7a22]/10 mix-blend-overlay z-10 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a] via-transparent to-transparent z-10"></div>
                 <div className="relative w-full h-full transform-gpu perspective-1000">
@@ -245,7 +245,7 @@ const App: React.FC = () => {
                     playsInline 
                     className="w-full h-full object-cover opacity-80 mix-blend-screen transform scale-105 group-hover:scale-110 transition-all duration-[2s]"
                   >
-                    <source src="/videocontent/Create_a_develeopers_202512270559_ey02q.webm" type="video/webm" />
+                    <source src="./videocontent/Create_a_develeopers_202512270559_ey02q.webm" type="video/webm" />
                   </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent pointer-events-none"></div>
@@ -260,7 +260,7 @@ const App: React.FC = () => {
             {/* Second Row: New Video and Second Part of Text - Same Size */}
             <div className="flex flex-col lg:flex-row gap-6">
               {/* New Video - Left Side */}
-              <div className="metallic-card rounded-lg relative overflow-hidden h-[350px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
+              <div className="metallic-card rounded-lg relative overflow-hidden h-[280px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
                 <div className="absolute inset-0 bg-[#ff7a22]/10 mix-blend-overlay z-10 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a] via-transparent to-transparent z-10"></div>
                 <div className="relative w-full h-full transform-gpu perspective-1000">
@@ -271,7 +271,7 @@ const App: React.FC = () => {
                     playsInline 
                     className="w-full h-full object-cover opacity-80 mix-blend-screen transform scale-105 group-hover:scale-110 transition-all duration-[2s]"
                   >
-                    <source src="/videocontent/Create_a_developers_202512270810_l0gl1.webm" type="video/webm" />
+                    <source src="./videocontent/Create_a_developers_202512270810_l0gl1.webm" type="video/webm" />
                   </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent pointer-events-none"></div>
@@ -283,28 +283,28 @@ const App: React.FC = () => {
               </div>
 
               {/* Second Part of Text - Right Side */}
-              <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[350px]">
-                <div className="h-full flex flex-col justify-center space-y-8">
-                  <div className="relative pl-12 border-l-2 border-white/10 group">
-                    <div className="absolute left-[-11px] top-0 w-5 h-5 bg-black border-2 border-white/20 rounded-full group-hover:border-[#ff7a22]/60 transition-colors duration-500"></div>
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                      <h3 className="text-2xl font-bold tracking-tight text-white/80">Site Manager</h3>
-                      <span className="font-mono text-[10px] text-white/30 apple-glass px-4 py-2 rounded-full border border-white/10 tracking-widest uppercase">2016 — 2017</span>
+              <div className="metallic-card rounded-lg relative overflow-hidden p-6 md:p-8 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[280px]">
+                <div className="h-full flex flex-col justify-center space-y-6">
+                  <div className="relative pl-10 border-l-2 border-white/10 group">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 bg-black border-2 border-white/20 rounded-full group-hover:border-[#ff7a22]/60 transition-colors duration-500"></div>
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
+                      <h3 className="text-lg font-bold tracking-tight text-white/80">Site Manager</h3>
+                      <span className="font-mono text-[9px] text-white/30 apple-glass px-3 py-1 rounded-full border border-white/10 tracking-widest uppercase">2016 — 2017</span>
                     </div>
-                    <p className="text-white/40 text-sm font-mono mb-4">Security Operations, Kassel</p>
-                    <p className="text-white/50 font-light text-sm leading-relaxed max-w-2xl">
+                    <p className="text-white/40 text-xs font-mono mb-3">Security Operations, Kassel</p>
+                    <p className="text-white/50 font-light text-xs leading-relaxed">
                       Command and control of operational protocols at high-sensitivity facilities. Expert in reliability and structured documentation.
                     </p>
                   </div>
 
-                  <div className="relative pl-12 border-l-2 border-white/10 group">
-                    <div className="absolute left-[-11px] top-0 w-5 h-5 bg-black border-2 border-white/20 rounded-full group-hover:border-[#ff7a22]/60 transition-colors duration-500"></div>
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
-                      <h3 className="text-2xl font-bold tracking-tight text-white/80">Security Specialist</h3>
-                      <span className="font-mono text-[10px] text-white/30 apple-glass px-4 py-2 rounded-full border border-white/10 tracking-widest uppercase">2011 — 2016</span>
+                  <div className="relative pl-10 border-l-2 border-white/10 group">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 bg-black border-2 border-white/20 rounded-full group-hover:border-[#ff7a22]/60 transition-colors duration-500"></div>
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 gap-3">
+                      <h3 className="text-lg font-bold tracking-tight text-white/80">Security Specialist</h3>
+                      <span className="font-mono text-[9px] text-white/30 apple-glass px-3 py-1 rounded-full border border-white/10 tracking-widest uppercase">2011 — 2016</span>
                     </div>
-                    <p className="text-white/40 text-sm font-mono mb-4">High-Sensitivity Sector, Munich</p>
-                    <p className="text-white/50 font-light text-sm leading-relaxed max-w-2xl">
+                    <p className="text-white/40 text-xs font-mono mb-3">High-Sensitivity Sector, Munich</p>
+                    <p className="text-white/50 font-light text-xs leading-relaxed">
                       Rigorous adherence to military-grade safety organizational systems and administrative monitoring.
                     </p>
                   </div>
@@ -315,17 +315,19 @@ const App: React.FC = () => {
         </Section>
 
         <Section id="contact" title="System Protocol">
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col lg:flex-row gap-6">
             {/* Left: Contact Form Card */}
-            <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-12 lg:p-16 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 min-h-[500px]">
-              <div className="max-w-lg mx-auto text-center space-y-8">
-                <div className="space-y-4">
-                  <p className="text-white/90 font-light text-xl lg:text-2xl tracking-tight">
-                    Initiate Secure Communication
-                  </p>
-                  <p className="font-mono text-[11px] lg:text-[12px] text-[#ff7a22] uppercase tracking-[0.5em] font-bold drop-shadow-[0_0_8px_rgba(255,122,34,0.3)]">Aue-Bad Schlema, Germany</p>
+            <div className="metallic-card rounded-lg relative overflow-hidden p-8 md:p-10 transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1 h-[455px]">
+              <div className="h-full flex flex-col justify-between">
+                <div className="text-center space-y-4">
+                  <div className="space-y-2">
+                    <p className="text-white/90 font-light text-lg tracking-tight">
+                      Initiate Secure Communication
+                    </p>
+                    <p className="font-mono text-[10px] text-[#ff7a22] uppercase tracking-[0.5em] font-bold drop-shadow-[0_0_8px_rgba(255,122,34,0.3)]">Aue-Bad Schlema, Germany</p>
+                  </div>
                 </div>
-                <form className="space-y-5 text-left" onSubmit={handleContactSubmit}>
+                <form className="flex-1 flex flex-col justify-end space-y-4" onSubmit={handleContactSubmit}>
                   <div className="relative group">
                     <input 
                       type="text" 
@@ -333,9 +335,9 @@ const App: React.FC = () => {
                       placeholder="Identification (Name)" 
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full bg-black/50 border border-white/10 rounded-xl p-4 lg:p-5 outline-none focus:border-[#ff7a22] focus:bg-black/70 transition-all font-light placeholder:text-white/10 apple-glass group-hover:border-white/20 depth-shadow text-sm"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg p-3 outline-none focus:border-[#ff7a22] focus:bg-black/70 transition-all font-light placeholder:text-white/10 apple-glass group-hover:border-white/20 depth-shadow text-sm"
                     />
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-[#ff7a22] transition-all duration-500 group-focus-within:w-[95%] opacity-70"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#ff7a22] transition-all duration-500 group-focus-within:w-[95%] opacity-70"></div>
                   </div>
                   <div className="relative group">
                     <input 
@@ -344,24 +346,24 @@ const App: React.FC = () => {
                       placeholder="Contact Channel (Email)" 
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full bg-black/50 border border-white/10 rounded-xl p-4 lg:p-5 outline-none focus:border-[#ff7a22] focus:bg-black/70 transition-all font-light placeholder:text-white/10 apple-glass group-hover:border-white/20 depth-shadow text-sm"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg p-3 outline-none focus:border-[#ff7a22] focus:bg-black/70 transition-all font-light placeholder:text-white/10 apple-glass group-hover:border-white/20 depth-shadow text-sm"
                     />
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-[#ff7a22] transition-all duration-500 group-focus-within:w-[95%] opacity-70"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#ff7a22] transition-all duration-500 group-focus-within:w-[95%] opacity-70"></div>
                   </div>
-                  <div className="relative group">
+                  <div className="relative group flex-1">
                     <textarea 
-                      rows={4} 
+                      rows={3} 
                       required
                       placeholder="Protocol Details (Message)" 
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className="w-full bg-black/50 border border-white/10 rounded-xl p-4 lg:p-5 outline-none focus:border-[#ff7a22] focus:bg-black/70 transition-all font-light placeholder:text-white/10 apple-glass resize-none group-hover:border-white/20 text-sm"
+                      className="w-full h-full bg-black/50 border border-white/10 rounded-lg p-3 outline-none focus:border-[#ff7a22] focus:bg-black/70 transition-all font-light placeholder:text-white/10 apple-glass resize-none group-hover:border-white/20 text-sm"
                     ></textarea>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-[#ff7a22] transition-all duration-500 group-focus-within:w-[95%] opacity-70"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#ff7a22] transition-all duration-500 group-focus-within:w-[95%] opacity-70"></div>
                   </div>
                   <button 
                     type="submit" 
-                    className="w-full bg-[#ff7a22] text-black font-mono text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-extrabold rounded-xl hover:bg-white transition-all duration-300 group shadow-2xl relative overflow-hidden apple-glass border border-[#ff7a22]/30 depth-shadow py-3 lg:py-4"
+                    className="w-full bg-[#ff7a22] text-black font-mono text-[9px] uppercase tracking-[0.2em] font-extrabold rounded-lg hover:bg-white transition-all duration-300 group shadow-2xl relative overflow-hidden apple-glass border border-[#ff7a22]/30 depth-shadow py-2"
                   >
                     <span className="relative z-10">TRANSMIT MESSAGE</span>
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
@@ -371,7 +373,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Right: Video Card */}
-            <div className="metallic-card rounded-lg relative overflow-hidden min-h-[400px] lg:min-h-[500px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
+            <div className="metallic-card rounded-lg relative overflow-hidden h-[455px] transition-all border-2 border-[#ff7a22] depth-shadow-lg flex-1">
               <div className="absolute inset-0 bg-[#ff7a22]/10 mix-blend-overlay z-10 pointer-events-none"></div>
               <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a] via-transparent to-transparent z-10"></div>
               <div className="relative w-full h-full transform-gpu perspective-1000">
@@ -382,7 +384,7 @@ const App: React.FC = () => {
                   playsInline 
                   className="w-full h-full object-cover opacity-80 mix-blend-screen transform scale-105 group-hover:scale-110 transition-all duration-[2s]"
                 >
-                  <source src="/videocontent/email_form.webm" type="video/webm" />
+                  <source src="./videocontent/email_form.webm" type="video/webm" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent pointer-events-none"></div>

@@ -14,16 +14,16 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
     if (!sectionRef.current || !window.gsap) return;
 
     const ctx = window.gsap.context(() => {
-      // Animate section entrance
+      // Animate section entrance - remove fade-in but keep other animations
       const sectionContent = sectionRef.current?.querySelector('.relative.apple-glass');
       if (sectionContent) {
         window.gsap.fromTo(sectionContent,
           {
-            opacity: 0,
-            y: 60
+            opacity: 1, // Start fully visible (no fade-in)
+            y: 60      // Keep slide-up animation
           },
           {
-            opacity: 1,
+            opacity: 1, // End fully visible
             y: 0,
             duration: 1,
             ease: "easeOut",
@@ -37,18 +37,18 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
         );
       }
 
-      // Special animations for contact section ONLY
+      // Special animations for contact section ONLY - keep slide animations
       if (id === 'contact') {
         // Contact form slides in from left
         const contactForm = sectionRef.current?.querySelector('.metallic-card:first-child');
         if (contactForm) {
           window.gsap.fromTo(contactForm,
             {
-              opacity: 0,
-              x: -100
+              opacity: 1, // Start fully visible (no fade-in)
+              x: -100     // Keep slide animation
             },
             {
-              opacity: 1,
+              opacity: 1, // End fully visible
               x: 0,
               duration: 1.2,
               delay: 0.3,
@@ -68,11 +68,11 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
         if (videoCard) {
           window.gsap.fromTo(videoCard,
             {
-              opacity: 0,
-              x: 100
+              opacity: 1, // Start fully visible (no fade-in)
+              x: 100      // Keep slide animation
             },
             {
-              opacity: 1,
+              opacity: 1, // End fully visible
               x: 0,
               duration: 1.2,
               delay: 0.5,
@@ -88,16 +88,16 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
         }
       }
 
-      // Animate title
+      // Animate title - remove fade-in but keep slide-up
       const titleElement = sectionRef.current?.querySelector('h2');
       if (titleElement) {
         window.gsap.fromTo(titleElement,
           {
-            opacity: 0,
-            y: 30
+            opacity: 1, // Start fully visible (no fade-in)
+            y: 30      // Keep slide-up animation
           },
           {
-            opacity: 1,
+            opacity: 1, // End fully visible
             y: 0,
             duration: 0.8,
             delay: 0.2,
@@ -113,11 +113,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
       }
     }, sectionRef);
 
-    // Only revert context on component unmount, not on every re-render
-    return () => {
-      // Don't revert context immediately - let animations complete naturally
-      // ctx.revert();
-    };
+    return () => ctx.revert();
   }, [id]);
 
   return (

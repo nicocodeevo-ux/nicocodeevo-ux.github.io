@@ -9,16 +9,16 @@ const Hero: React.FC = () => {
     if (!heroRef.current || !window.gsap) return;
 
     const ctx = window.gsap.context(() => {
-      // Animate hero elements with GSAP
+      // Animate hero elements - remove fade-in but keep other animations
       const elements = heroRef.current?.querySelectorAll('span, h1, p, div > a');
       
       window.gsap.fromTo(elements,
         {
-          opacity: 0,
-          y: 30
+          opacity: 1, // Start fully visible (no fade-in)
+          y: 30      // Keep slide-up animation
         },
         {
-          opacity: 1,
+          opacity: 1, // End fully visible
           y: 0,
           duration: 0.8,
           stagger: 0.2,
@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
         }
       );
 
-      // Scroll indicator animation
+      // Scroll indicator animation (keep the bounce effect)
       const scrollIndicator = heroRef.current?.querySelector('.absolute.bottom-12');
       if (scrollIndicator) {
         window.gsap.to(scrollIndicator, {
@@ -45,9 +45,7 @@ const Hero: React.FC = () => {
       setShowScrollMessage(true);
     }, 1500);
 
-    // Don't revert context to prevent elements from disappearing
     return () => {
-      // ctx.revert();
       clearTimeout(messageTimer);
     };
   }, []);
@@ -55,23 +53,23 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" ref={heroRef} className="min-h-screen flex flex-col justify-center px-8 md:px-24">
       <div className="max-w-5xl">
-        <span className="font-mono text-[#ff7a22] text-xs md:text-sm tracking-[0.4em] uppercase mb-6 block font-bold opacity-0">
+        <span className="font-mono text-[#ff7a22] text-xs md:text-sm tracking-[0.4em] uppercase mb-6 block font-bold">
           Nico Kuehn // Python System Developer
         </span>
         
         <h1 
-          className="text-[clamp(2rem,6vw,4rem)] font-extrabold leading-[0.95] tracking-tighter mb-10 opacity-0"
+          className="text-[clamp(2rem,6vw,4rem)] font-extrabold leading-[0.95] tracking-tighter mb-10"
           style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
         >
           Architecting<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#ff7a22] drop-shadow-[0_0_20px_rgba(255,122,34,0.3)]">Complex Logic.</span>
         </h1>
 
-        <p className="max-w-2xl text-white/60 text-lg md:text-xl font-light leading-relaxed mb-12 opacity-0">
+        <p className="max-w-2xl text-white/60 text-lg md:text-xl font-light leading-relaxed mb-12">
           Specializing in Django, REST APIs, and robust data systems. I build the stable backend infrastructure that modern high-performance applications demand.
         </p>
 
-        <div className="flex flex-wrap gap-6 opacity-0">
+        <div className="flex flex-wrap gap-6">
           <a 
             href="#experience" 
             className="inline-flex items-center px-12 py-5 bg-white text-black font-mono text-[11px] uppercase tracking-[0.2em] font-extrabold rounded-2xl hover:bg-[#ff7a22] hover:text-white transition-all duration-300 group shadow-2xl relative overflow-hidden"
@@ -93,7 +91,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll message that appears after 1.5 seconds */}
       {showScrollMessage && (
-        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 animate-fade-in">
+        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50">
           <div className="apple-glass bg-black/60 border border-white/10 px-6 py-3 rounded-full">
             <p className="font-mono text-[10px] text-[#ff7a22] tracking-wider uppercase animate-pulse">
               scroll down to iterate ...
